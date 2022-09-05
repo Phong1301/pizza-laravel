@@ -14,11 +14,16 @@ class Categories extends Seeder
         //
         $timestamp = date('Y-m-d H:i:s');
         DB::table('categories')->insert([
-            ['name'=>'Pizza', 'img'=>'pizza.png', 'created_at'=>$timestamp, 'updated_at'=>$timestamp],
-            ['name'=>'Noodles', 'img'=>'instant-noodles.png', 'created_at'=>$timestamp, 'updated_at'=>$timestamp],
-            ['name'=>'Salad', 'img'=>'salad.png', 'created_at'=>$timestamp, 'updated_at'=>$timestamp],
-            ['name'=>'Drinks', 'img'=>'smoothie.png', 'created_at'=>$timestamp, 'updated_at'=>$timestamp],
-            ['name'=>'Cream', 'img'=>'ice-cream.png', 'created_at'=>$timestamp, 'updated_at'=>$timestamp]
+            ['name'=>'Pizza', 'img'=>'pizza.png'],
+            ['name'=>'Noodles', 'img'=>'instant-noodles.png'],
+            ['name'=>'Salad', 'img'=>'salad.png'],
+            ['name'=>'Drinks', 'img'=>'smoothie.png'],
+            ['name'=>'Cream', 'img'=>'ice-cream.png']
         ]);
     }
 }
+
+
+
+
+         
