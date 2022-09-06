@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 05, 2022 lúc 04:56 PM
--- Phiên bản máy phục vụ: 10.4.17-MariaDB
--- Phiên bản PHP: 7.2.34
+-- Thời gian đã tạo: Th9 06, 2022 lúc 09:59 AM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `pizza`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `img` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `img`) VALUES
+(1, 'Pizza', 'pizza.png'),
+(2, 'Noodles', 'instant-noodles.png'),
+(3, 'Salad', 'salad.png'),
+(4, 'Drinks', 'smoothie.png'),
+(5, 'Cream', 'ice-cream.png');
 
 -- --------------------------------------------------------
 
@@ -51,6 +74,12 @@ INSERT INTO `products` (`id`, `id_category`, `name`, `img`, `title`, `price`) VA
 --
 
 --
+-- Chỉ mục cho bảng `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
@@ -59,6 +88,12 @@ ALTER TABLE `products`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
