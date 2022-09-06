@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/85a1b29132.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -75,7 +76,7 @@
             <div class="cate-list">
                 @foreach ($categories as $category)
                     <div class="cate-item">
-                        <a href="" class="cate-link">
+                        <a href="{{ route('category', ['category'=>$category->name]) }}" class="cate-link">
                             <img class="cate-img" src="/assets/img/{{ $category->img }}"  alt="">
                             <p class="cate-title">{{ $category->name }}</p>
                         </a>
@@ -103,7 +104,7 @@
                                 <div class="bottom">
                                     <div class="price">
                                         <p class="overrideheader">
-                                            <span>Giá chỉ từ: <b> {{ number_format($product->price, 3) }} đ</b></span>
+                                            <span>Giá chỉ từ: <b> {{ number_format($product->price) }} đ</b></span>
                                         </p>
                                     </div>
                                     <div class="buy-icon">
@@ -248,13 +249,15 @@
         </div>
     </footer>
 
-
-
-        
-
+    <script>
     
+    // $(document).ready(function(){
+    //     $("a.cate-link").click(function(){
+    //         return false;
+    //     })
+    // })
 
-
+    </script>
     <script src="/assets/script/app.js"></script>
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 

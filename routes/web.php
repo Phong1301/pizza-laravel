@@ -15,17 +15,4 @@ use Illuminate\Support\Facades\DB;
 
 // Front-end
 Route::get('/', [FrontEndController::class, 'home'])->name('home');
-
-
-
-// Relationship 1vs1
-Route::get('relation', function(){
-    $products = App\products::all();
-
-    foreach($products as $product){
-        echo $product -> name;
-        echo '<br>';
-        echo $product -> categories-> id;
-        echo '<br>';
-    }
-});
+Route::get('/{category?}', [FrontEndController::class, 'category'])->name('category');
